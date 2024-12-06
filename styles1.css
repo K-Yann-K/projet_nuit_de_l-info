@@ -1,0 +1,164 @@
+/* Réinitialisation générale */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Corps de la page */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #e6f7ff; /* Fond doux rappelant le ciel/océan */
+}
+
+/* Section Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0077b6; /* Bleu océan */
+    padding: 10px 20px;
+    border-bottom: 3px solid #005f73; /* Accentuation marine */
+}
+
+/* Titre principal */
+.title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffffff; /* Texte blanc pour le contraste */
+}
+
+/* Menu circulaire */
+.menu {
+    position: relative;
+}
+
+.menu-circle {
+    width: 35px;
+    height: 35px;
+    background-color: #90e0ef; /* Bleu clair */
+    color: #0077b6; /* Texte bleu plus foncé */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+}
+
+/* Effet de survol pour le bouton du menu */
+.menu-circle:hover {
+    background-color: #80d9ce; /* Changement de couleur au survol */
+}
+
+/* Menu déroulant */
+.dropdown {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 40px;
+    background-color: #ffffff; /* Fond blanc propre */
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px; /* Coins arrondis */
+    z-index: 10;
+    animation: slideDown 0.3s ease-in-out;
+}
+
+/* Affichage du menu au clic */
+.dropdown.show {
+    display: block;
+}
+
+/* Liste des éléments du menu */
+.dropdown ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.dropdown li {
+    padding: 12px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Effet de survol sur les éléments du menu */
+.dropdown li:hover {
+    background-color: #caf0f8; /* Survol doux rappelant les vagues */
+}
+
+/* Liens dans le menu */
+.dropdown li a {
+    text-decoration: none;
+    color: #0077b6; /* Couleur bleue pour les liens */
+    font-weight: bold;
+}
+
+/* Animation du menu déroulant */
+@keyframes slideDown {
+    from {
+        transform: translateY(-10px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Grille principale */
+.animation {
+    display: grid;
+    grid-template-columns: 1fr 0.3fr 1fr; /* Trois colonnes égales */
+    grid-template-rows: auto auto; /* Deux lignes */
+    gap: 20px; /* Espacement entre les divs */
+    padding: 20px;
+}
+
+/* Section Individu */
+#individu {
+    border: 2px solid #52b788; /* Bordure verte pour la terre */
+    background-color: #d8f3dc; /* Vert clair pour nature/terre */
+    height: 350px; /* Hauteur ajustable */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* Section Curseur */
+#curseur {
+    border: 2px solid #74c69d; /* Bordure verte plus foncée */
+    background-color: #b7e4c7; /* Vert intermédiaire */
+    height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* Section Océan */
+#ocean {
+    border: 2px solid #023e8a; /* Bordure bleu océan foncé */
+    background-color: #90e0ef; /* Bleu clair rappelant l'eau */
+    height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* Section Quiz */
+#quiz {
+    border: 2px solid #ffccd5; /* Bordure rose clair */
+    background-color: #f8d7da; /* Rose pour une touche douce */
+    grid-column: 1 / -1; /* Étend sur toutes les colonnes */
+    height: 150px; /* Ajustable selon le besoin */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}

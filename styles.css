@@ -1,0 +1,577 @@
+body{
+	margin: 0;
+	overflow-x: hidden;
+	padding: 0;
+    width: 100%;
+	height: 100%; /* Ensures the page height doesn't exceed the viewport */
+}
+
+
+
+/* Styling for the .content section */
+.content {
+    position: absolute; /* Overlay on top of the animation */
+    top: 25%; /* Position it towards the top of the screen */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Perfect centering */
+    padding: 30px 50px; /* Add space inside the box */
+    border-radius: 15px; /* Smooth rounded corners */
+
+    text-align: center; /* Center-align text */
+    z-index: 100; /* Ensure it appears above other elements */
+    color: #333; /* Text color */
+    font-family: 'Poppins', sans-serif; /* Modern sans-serif font */
+}
+
+img {
+    width: 25%;
+}
+/* Styling for the paragraph inside .content */
+.content p {
+    font-family: 'Poppins', sans-serif;
+    height: 20%;
+   position: center;
+    font-size: 1.1em; /* Slightly larger text for readability */
+    margin-bottom: 25px; /* Space below the paragraph */
+    color: #fffefe; /* Subtle dark gray for contrast */
+}
+
+ /* Animation Button Style */
+ .content input[type="button"] {
+    background-color: transparent;
+    border: 2px solid #fff;
+    padding: 10px 60px;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.content input[type="button"]:hover {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.content input[type="button"]:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: all 0.5s ease;
+    transform: translate(-50%, -50%) scale(1);
+    border-radius: 50%;
+    z-index: 0;
+}
+
+.content input[type="button"]:hover:before {
+    transform: translate(-50%, -50%) scale(0);
+}
+
+.content input[type="button"]:hover {
+    z-index: 1;
+}
+
+/* Optional: Add animation for button on load */
+.content input[type="button"] {
+    animation: buttonAnimation 1s ease-out;
+}
+
+@keyframes buttonAnimation {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.content input#no {
+    background: #ff6347; /* Red for negative action */
+}
+
+.content input[type="button"]:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.content input[type="button"]:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+  
+  h1 {
+    font-size: 4rem;
+    text-transform: uppercase;
+    margin: 0;
+    letter-spacing: 5px;
+  }
+  
+  .overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); 
+    z-index: 11;
+  }
+
+  a{
+    background: linear-gradient(#8E86B5, #ACAEED);
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    display: inline-block;
+    border-radius: 50px 50px 50px 50px;
+    padding: 20px 30px;
+  }
+  
+  a:hover{
+    background: linear-gradient(#696484, #8788BA);
+
+  }
+
+.fish-net {
+    position: absolute;
+    width: 100px; 
+    height: 100px; 
+    bottom: 10px; /* Adjust to position it near the water */
+    left: 380px; /* Center relative to the boat */
+    transform-origin: top center; /* Pivot for tilting */
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 15; /* Ensure it's above the water */
+    animation: net-trail 6s ease-in-out infinite; /* Add trailing motion */
+    opacity: 1; /* Start fully visible */
+    transition: opacity 2.5s ease; /* Smooth fade effect */
+}
+
+
+
+
+.fish-net-line {
+    position: absolute;
+    width: 3px; /* Thickness of the line */
+    height: 190px; /* Length of the line */
+    background-color: black; /* Line color */
+    bottom: 26px; /* Position to align with the net */
+	left: 250px;
+    transform-origin: top; /* Rotate from the top */
+    transform: rotate(-53deg); /* Match net's tilt */
+    z-index: 16; /* Ensure it stays above the water */
+}
+
+.animation-wrapper{
+	background: #ace5ee;
+	bottom: 0;
+	left: 0;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+.water{
+    bottom: 0;
+    left: 0;
+	position: absolute;
+    width: 100%;
+}
+
+.water ul.waves{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.water ul.waves li{
+	background-repeat: repeat-x;
+}
+
+.water ul.waves li.wave-one{
+	animation: wave 8.7s linear infinite;
+	-webkit-animation-fill-mode: forwards;
+	-o-animation-fill-mode: forwards;
+	animation-fill-mode: forwards;
+	bottom: 0px;
+	height: 50px;
+	left: 0;
+	position: absolute;
+	right: 0;
+	z-index: 10;
+}
+
+.water ul.waves li.wave-two{
+	-webkit-animation-fill-mode: forwards;
+	-o-animation-fill-mode: forwards;
+	animation-fill-mode: forwards;
+	animation: wave 10s linear infinite;
+	bottom: 0px;
+	height: 84px;
+	left: 0;
+	position: absolute;
+	right: 0;
+	z-index: 9;
+}
+
+.water ul.waves li.wave-three{
+	-webkit-animation-fill-mode: forwards;
+	-o-animation-fill-mode: forwards;
+	animation-fill-mode: forwards;
+	animation: wave 25s linear infinite;
+	bottom: 0;
+	height: 190px;
+	left: 0;
+	position: absolute;
+	right: 0;
+	z-index: 8;
+}
+
+.water ul.waves li.wave-four{
+	-webkit-animation-fill-mode: forwards;
+	-o-animation-fill-mode: forwards;
+	animation-fill-mode: forwards;
+	animation: wave 25s linear infinite;
+	bottom: 0;
+	height: 205px;
+	left: 0;
+	position: absolute;
+	right: 0;
+}
+
+.boat {
+    animation: boat 2.5s linear infinite;
+    /* background-image: url('your-image.jpg'); */
+    background-repeat: no-repeat;
+    background-size: contain; /* Adjust as needed */
+    /* background-position: center; */
+    bottom: 145px;
+    height: 270px;
+    left: 50%;
+    position: absolute;
+    width: 300px;
+}
+
+
+.cloud{
+	animation: cloud 30s linear infinite;
+	background-repeat: no-repeat;
+    height: 165px;
+    left: 0;
+    position: absolute;
+    width: 297px
+}
+
+.cloud2{
+	animation: cloud 25s linear infinite;
+	background-repeat: no-repeat;
+    bottom: 320px;
+    height: 165px;
+    left: 140px;
+    position: absolute;
+    width: 297px;
+}
+
+.dolphin{
+	animation: fish 15s linear infinite;
+	background-repeat: no-repeat;
+	bottom: 45px;
+	height: 80px;
+	left: 20%;
+	position: absolute;
+	width: 124px;
+	z-index: 9;
+}
+
+.caught {
+    opacity: 0;
+    transform: scale(0.5); /* Shrink */
+    animation: none; /* Stop animation */
+    pointer-events: none;
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
+
+
+.water ul.trash {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    /* bottom: 100px; Adjusts the position to the middle of the water container */
+    /* transform: translateY(50%); Ensures items are visually centered */
+    left: 0;
+    width: 100%;
+    height: 100%; /* Allows the list to adapt to the content size */
+	z-index: 15;
+}
+
+.water ul.trash .trash-item-1 {
+    position: absolute;
+    width: 34px;
+    height: 34px;
+    background-size: contain;
+    background-repeat: no-repeat;
+	animation: trash-float-1 25s linear infinite;
+}
+
+.water ul.trash .trash-item-2 {
+    position: absolute;
+    width: 34px;
+    height: 34px;
+    background-size: contain;
+    background-repeat: no-repeat;
+	animation: trash-float-2 25s linear infinite;
+}
+
+.water ul.trash .trash-item-3 {
+    position: absolute;
+    width: 34px;
+    height: 34px;
+    background-size: contain;
+    background-repeat: no-repeat;
+	animation: trash-float-3 25s linear infinite;
+}
+/* Place trash randomly */
+.water ul.trash .trash-item-1:nth-child(1) {
+    left: 10%; /* Horizontal position */
+    bottom: 50px; /* Vertical position */
+    animation-duration: 8s;
+}
+
+.water ul.trash .trash-item-1:nth-child(2) {
+    left: 25%; /* Horizontal position */
+    bottom: 90px; /* Vertical position */
+    animation-duration: 11s;
+}
+
+.water ul.trash .trash-item-1:nth-child(3) {
+    left: 40%;
+    bottom: 70px; /* Vertical position */
+    animation-duration: 9s;
+}
+
+.water ul.trash .trash-item-1:nth-child(4) {
+    left: 55%;
+    bottom: 30px; /* Vertical position */
+    animation-duration: 14s;
+}
+
+.water ul.trash .trash-item-1:nth-child(5) {
+    left: 70%;
+    bottom: 100px; /* Vertical position */
+    animation-duration: 12s;
+}
+
+.water ul.trash .trash-item-2:nth-child(6) {
+    left: 85%; /* Horizontal position */
+    bottom: 20px; /* Vertical position */
+    animation-duration: 16s;
+}
+
+.water ul.trash .trash-item-2:nth-child(7) {
+    left: 15%; /* Horizontal position */
+    bottom: 110px; /* Vertical position */
+    animation-duration: 7s;
+}
+
+.water ul.trash .trash-item-2:nth-child(8) {
+    left: 35%; /* Horizontal position */
+    bottom: 40px; /* Vertical position */
+    animation-duration: 18s;
+}
+
+.water ul.trash .trash-item-2:nth-child(9) {
+    left: 50%; /* Horizontal position */
+    bottom: 80px; /* Vertical position */
+    animation-duration: 10s;
+}
+
+.water ul.trash .trash-item-2:nth-child(10) {
+    left: 65%;
+    bottom: 120px; /* Vertical position */
+    animation-duration: 15s;
+}
+
+.water ul.trash .trash-item-3:nth-child(11) {
+    left: 80%;
+    bottom: 60px; /* Vertical position */
+    animation-duration: 13s;
+}
+
+.water ul.trash .trash-item-3:nth-child(12) {
+    left: 5%; /* Horizontal position */
+    bottom: 140px; /* Vertical position */
+    animation-duration: 20s;
+}
+
+.water ul.trash .trash-item-3:nth-child(13) {
+    left: 30%;
+    bottom: 100px; /* Vertical position */
+    animation-duration: 17s;
+}
+
+.water ul.trash .trash-item-3:nth-child(14) {
+    left: 45%; /* Horizontal position */
+    bottom: 50px; /* Vertical position */
+    animation-duration: 9s;
+}
+
+.water ul.trash .trash-item-3:nth-child(15) {
+    left: 75%; /* Horizontal position */
+    bottom: 30px; /* Vertical position */
+    animation-duration: 22s;
+}
+
+.boat-wrapper {
+    position: absolute;
+    bottom: 2px;
+    left: 55%;
+    justify-content: flex-end;
+}
+
+
+/*Animation Keyframe Section*/
+
+@keyframes wave{
+    0% {
+        background-position: 0 0;
+	}
+
+    100% {
+        background-position: 1920px 0;
+    }
+}
+
+
+@keyframes boat {
+    0% {
+        transform: translateX(0) rotate(0deg);
+    }
+    50% {
+        transform: translateX(-5px) rotate(-3deg); /* Slight tilt */
+    }
+    100% {
+        transform: translateX(0) rotate(0deg);
+    }
+}
+
+@keyframes cloud{
+	0%{
+		left: -30%;
+	}
+
+	100%{
+		left: 100%;
+	}
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-10px) rotate(10deg);
+    }
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+}
+
+@keyframes trash-float-1 {
+    0% {
+        transform: translateY(0) rotate(0deg); /* Start at initial position */
+        left: -10%; /* Off-screen left */
+    }
+    25% {
+        transform: translateY(-20px) rotate(-5deg); /* Move slightly up */
+    }
+    50% {
+        transform: translateY(0) rotate(5deg); /* Return to middle position */
+        left: 50%; /* Midway horizontally */
+    }
+    75% {
+        transform: translateY(20px) rotate(-5deg); /* Move slightly down */
+    }
+    100% {
+        transform: translateY(0) rotate(0deg); /* Back to initial position */
+        left: 110%; /* Off-screen right */
+    }
+}
+@keyframes trash-float-2 {
+    0% {
+        transform: translateX(200) rotate(0deg); /* Start at initial position */
+        left: -10%; /* Off-screen left */
+    }
+    25% {
+        transform: translateY(-20px) rotate(-5deg); /* Move slightly up */
+    }
+    50% {
+        transform: translateY(0) rotate(5deg); /* Return to middle position */
+        left: 50%; /* Midway horizontally */
+    }
+    75% {
+        transform: translateY(20px) rotate(-5deg); /* Move slightly down */
+    }
+    100% {
+        transform: translateY(0) rotate(0deg); /* Back to initial position */
+        left: 110%; /* Off-screen right */
+    }
+}
+@keyframes trash-float-3 {
+    0% {
+        transform: translateY(300) rotate(0deg); /* Start at initial position */
+        left: -10%; /* Off-screen left */
+    }
+    25% {
+        transform: translateY(-20px) rotate(-5deg); /* Move slightly up */
+    }
+    50% {
+        transform: translateY(0) rotate(5deg); /* Return to middle position */
+        left: 50%; /* Midway horizontally */
+    }
+    75% {
+        transform: translateY(20px) rotate(-5deg); /* Move slightly down */
+    }
+    100% {
+        transform: translateY(0) rotate(0deg); /* Back to initial position */
+        left: 110%; /* Off-screen right */
+    }
+}
+
+@keyframes net-trail {
+    0% {
+        transform: translateX(-50%) rotate(-60deg); /* Initial tilt */
+    }
+    50% {
+        transform: translateX(-48%) rotate(-70deg); /* Sway slightly */
+    }
+    100% {
+        transform: translateX(-50%) rotate(-60deg); /* Return to initial tilt */
+    }
+}
+
+ /* Container with fixed boundaries */
+ .webview-container {
+    width: 400px;
+    height: 300px;
+    border: 2px solid #333;
+    position: relative; /* For positioning child elements */
+    overflow: hidden; /* Ensures no overflow outside */
+  }
+
+  /* Movable item */
+  .movable-item {
+    width: 50px;
+    height: 50px;
+    background-color: #007bff;
+    position: absolute; /* Allows item movement */
+    top: 0;
+    left: 0;
+    cursor: pointer;
+  }

@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plongée dans l'Océan</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(45deg, #002f5d, #004b8d); /* Fond dégradé bleu foncé */
+            color: #fff;
+            overflow-x: hidden;
+            padding: 0;
+        }
+
+        header {
+            text-align: center;
+            padding: 50px;
+            background-color: rgba(0, 45, 84, 0.85); /* Fond bleu de mer */
+            font-size: 2.5em;
+            position: relative;
+            z-index: 1000;
+            transition: transform 0.3s ease;
+        }
+
+        header h2 {
+            text-transform: uppercase;
+            margin-top: 50px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            color: #00aaff; /* Bleu clair pour le titre */
+            transition: transform 0.3s ease;
+        }
+
+        header h1:hover {
+            transform: scale(1.1);
+        }
+
+        nav {
+            background-color: rgba(0, 45, 84, 0.85); /* Fond bleu foncé */
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 999;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            color: #00aaff; /* Bleu clair pour les liens */
+            font-size: 1.2em;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: #006a8b; /* Bleu plus foncé pour le survol */
+        }
+
+        section {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 30px;
+            background-color: rgba(0, 45, 84, 0.85); /* Fond bleu foncé pour les sections */
+            border-radius: 10px;
+            box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.7);
+            transition: transform 0.3s ease;
+        }
+
+        section:hover {
+            transform: scale(1.02);
+        }
+
+        h2 {
+            font-size: 2.5em;
+            color: #00aaff; /* Bleu clair pour les titres */
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            color: #d1e8f3; /* Gris clair bleuâtre pour le texte */
+        }
+
+        .source-links {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .source-links a {
+            color: #00aaff; /* Bleu clair pour les liens */
+            text-decoration: none;
+            font-size: 1.1em;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+
+        .source-links a:hover {
+            color: #66ccff; /* Bleu plus clair pour le survol */
+        }
+
+        footer {
+            background-color: rgba(0, 45, 84, 0.85);
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            font-size: 1.1em;
+        }
+
+        footer p {
+            color: #a6c8e1;
+        }
+
+        footer a {
+            color: #00aaff;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .header-scrolled {
+            transform: translateY(-100px);
+        }
+
+        .intro, .conclusion {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 40px;
+            background-color: rgba(0, 45, 84, 0.85);
+            border-radius: 10px;
+            box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.7);
+            text-align: center;
+        }
+
+        .intro h2, .conclusion h2 {
+            font-size: 2.5em;
+            color: #00aaff;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <h2>Plongée dans l'Océan : Une Exploration du Corps Humain</h2>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#currents">Courants et Cœur</a></li>
+            <li><a href="#nervous">Système Nerveux</a></li>
+            <li><a href="#lungs">Poumons et Échanges</a></li>
+            <li><a href="#kidneys">Reins et Salinité</a></li>
+        </ul>
+    </nav>
+
+    <!-- Bloc Introduction -->
+    <section class="intro">
+        <h2>Introduction</h2>
+        <p>
+            Il était une fois une planète magnifique appelée Terre, où chaque partie de l'océan reflétait un aspect vital du corps humain. Imaginez cette planète comme un être vivant géant, où l'océan et le corps humain partagent des similitudes fascinantes, chacun jouant un rôle crucial pour maintenir l'équilibre et la santé de l'ensemble. Voici comment ces deux mondes sont intimement liés :
+
+        </p>
+    </section>
+
+    <!-- Section 1: Courants et Cœur -->
+    <section id="currents">
+        <h2>Le Cœur et les Courants Océaniques</h2>
+        <p>
+            Les courants océaniques agissent comme le cœur de notre planète, pompant et distribuant la chaleur à travers le globe. Ils forment un immense réseau de circulation thermohaline, composé de courants de surface chauds et de courants profonds froids. Tout comme le cœur humain qui pompe le sang pour réguler la température corporelle, ces courants redistribuent la chaleur des régions tropicales vers les pôles, adoucissant ainsi les climats côtiers et influençant les températures continentales.En transportant la chaleur, les courants océaniques influencent le climat mondial, régulent les précipitations, et transportent des nutriments essentiels pour la vie marine. Ils absorbent également une grande quantité de CO2, aidant à maintenir l'équilibre climatique. Si ce cœur océanique venait à ralentir ou à être perturbé, cela pourrait entraîner des événements météorologiques extrêmes, des modifications dans les écosystèmes marins et des changements climatiques régionaux significatifs.
+
+
+        </p>
+        <div class="source-links">
+            <a href="https://fr.wikipedia.org/wiki/Courant_marin">Wikipedia</a>
+            <a href="https://planet-terre.ens-lyon.fr/planetterre/objets/Images/oceanographie-physique/oceanographie-physique-doc01.pdf">Planet-terre </a>
+            <a href="https://www.lililamouette.com/la-mer/observer-la-mer/les-courants-oceaniques">lililamouette </a>
+            <a href="https://www.oceanclock.com/fr/blog/13-les-secrets-des-courants-marins">oceanclock </a>
+            <a href="https://interstices.info/comprendre-la-circulation-oceanique/">interstices </a>
+        </div>
+    </section>
+
+    <!-- Section 2: Système Nerveux -->
+    <section id="nervous">
+        <h2>Le Système Nerveux et les Réseaux Écologiques</h2>
+        <p>
+            Le système nerveux humain, avec ses innombrables connexions, est comparable aux réseaux écologiques des océans. Les écosystèmes marins, comme les récifs coralliens et les mangroves, forment un réseau interconnecté qui assure la stabilité des populations et l'équilibre écologique. Ces écosystèmes agissent comme des centres nerveux, facilitant la communication entre diverses espèces marines. Les récifs offrent des habitats pour de nombreuses espèces de poissons, tandis que les mangroves protègent les côtes et servent de nurseries.
+            Tout comme un système nerveux endommagé peut entraîner une paralysie, la dégradation des réseaux écologiques océaniques peut provoquer un dysfonctionnement de l'écosystème marin. La destruction des récifs ou des mangroves entraîne la perte d'habitats essentiels, affecte les migrations, et réduit la biodiversité.
+            
+        <div class="source-links">
+            <a href="https://www.worldwildlife.org/threats/coral-triangle">Récifs coralliens</a>
+            <a href="http://www.fao.org/mangrove-facts/en/">Mangroves </a>
+            <a href="https://www.noaa.gov/ourplanet/ocean-and-climate"> NOAA </a>
+        </div>
+    </section>
+
+    <!-- Section 3: Poumons et Échanges Gazeux -->
+    <section id="lungs">
+        <h2>Les Poumons et les Échanges Gazeux</h2>
+        <p>
+            Les poumons humains, responsables des échanges gazeux vitaux, trouvent leur parallèle dans l'océan à travers le phytoplancton. Le phytoplancton joue un rôle crucial dans l'absorption du CO2 et la production d'oxygène. De même que l'emphysème pulmonaire détruit progressivement les alvéoles, la destruction du phytoplancton réduit la capacité d'absorption et de production d'oxygène de l'océan.
+            La perturbation de ces échanges gazeux peut avoir des conséquences graves. Dans le corps humain, l'emphysème provoque des difficultés respiratoires et peut entraîner une insuffisance respiratoire. Dans l'océan, la diminution du phytoplancton peut conduire à l'acidification, menaçant la survie de nombreuses espèces marines et perturbant l'équilibre climatique global.
+            
+        </p>
+        <div class="source-links">
+            <a href="https://www.elysee.fr/emmanuel-macron/2019/12/03/locean-poumon-de-lhumanite-qui-menace-de-setouffer">elysee</a>
+            <a href="http://codep01.ffessm.fr/IMG/pdf/codep01_p4_cours_mercredi_110209.pdf">Eddie Alter  </a>
+            <a href="http://codep01.ffessm.fr/IMG/pdf/echangesgazeuxn4codep2017.pdf"> ECHANGES GAZEUX</a>
+            <a href="https://portals.iucn.org/library/sites/library/files/documents/2019-048-Fr-Summ.pdf"> UICN </a>
+        </div>
+    </section>
+
+    <!-- Section 4: Reins et Salinité -->
+    <section id="kidneys">
+        <h2>Les Reins et la Régulation de la Salinité</h2>
+        <p>
+            Les reins humains, qui filtrent le sang et régulent l'équilibre hydrique et électrolytique, ont leur équivalent dans l'océan avec la régulation de la salinité. Les océans régulent leur salinité à travers des processus naturels comme l'évaporation, les précipitations et l'apport d'eau douce. Tout comme une défaillance rénale peut entraîner une accumulation de toxines dans le corps, un changement significatif de la salinité océanique peut perturber les courants océaniques et affecter les écosystèmes marins.
+        </p>
+        <div class="source-links">
+            <a href="https://www.biologie-journal.org/articles/jbio/pdf/2007/01/jbio07101.pdf">Biologie journal</a>
+            <a href="https://pagesperso.locean-ipsl.upmc.fr/ericg/publications/Guilyardi_Meteo01.pdf"> l'ocean ipsl  </a>
+            <a href="https://fr.wikipedia.org/wiki/Eau_de_mer"> Wikipedia</a>
+            <a href="https://sciencepost.fr/article-provenance-du-sel-des-oceans/"> sciencepost </a>
+            <a href="https://hal.science/hal-01922762/document"> hal.science </a>
+            <a href="https://argonautica.jason.oceanobs.com/html/argonautica/tutorial/thema_salinity_fr.html"> argonautica </a>
+            <a href="https://www.universalis.fr/encyclopedie/osmoregulation/3-types-d-osmoregulation/"> universalis </a>
+        </div>
+    </section>
+
+    <!-- Bloc Conclusion -->
+    <section class="conclusion">
+        <h2>Conclusion</h2>
+        <p>
+            En explorant ces parallèles entre le corps humain et l'océan, nous comprenons l'importance cruciale de préserver la santé des océans pour maintenir l'équilibre climatique de notre planète. Tout comme nous prenons soin de notre corps pour assurer son bon fonctionnement, nous devons protéger nos océans pour garantir la santé et la survie de notre planète. C'est une mission collective de comprendre et de préserver cette "machine océanique" vitale, pour le bien de toutes les formes de vie sur Terre.
+        </p>
+    </section>
+
+    <footer>
+        <p>Explorez plus sur ces phénomènes en cliquant sur les liens ci-dessus.</p>
+        <p><a href="#header">Retour au début</a></p>
+        <p>
+            <a href="gaia.html">Retour à la page d'accueil (Gaia)</a>
+        </p>
+        <p>&copy; 2024 Plongée dans l'Océan. Tous droits réservés.</p>
+    </footer>  
+
+    <script>
+        window.addEventListener('scroll', function () {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('header-scrolled');
+            } else {
+                header.classList.remove('header-scrolled');
+            }
+        });
+    </script>
+</body>
+</html>

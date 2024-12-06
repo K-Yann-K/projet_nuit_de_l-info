@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaïa</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #e6f7ff;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #0077b6;
+            padding: 10px 20px;
+            border-bottom: 3px solid #005f73;
+        }
+
+        .title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ffffff;
+        }
+
+        .menu {
+            position: relative;
+        }
+
+        .menu-circle {
+            width: 35px;
+            height: 35px;
+            background-color: #90e0ef;
+            color: #0077b6;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+        }
+
+        .menu-circle:hover {
+            background-color: #80d9ce;
+        }
+
+        .dropdown {
+            display: none;
+            position: absolute;
+            right: 0;
+            top: 40px;
+            background-color: #ffffff;
+            border: 1px solid #ccc;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            z-index: 10;
+            animation: slideDown 0.3s ease-in-out;
+        }
+
+        .dropdown.show {
+            display: block;
+        }
+
+        .dropdown ul {
+            list-style: none;
+        }
+
+        .dropdown li {
+            padding: 12px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .dropdown li:hover {
+            background-color: #caf0f8;
+        }
+
+        .dropdown li a {
+            text-decoration: none;
+            color: #0077b6;
+            font-weight: bold;
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-10px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        .animation {
+            display: grid;
+            grid-template-columns: 1fr 0.3fr 1fr;
+            grid-template-rows: auto auto;
+            gap: 20px;
+        }
+
+        #individu, #slider, #ocean {
+            height: 350px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        #individu {
+            border: 2px solid #52b788;
+            background-color: #d8f3dc;
+        }
+
+        #slider {
+            border: 2px solid #74c69d;
+            background-color: #b7e4c7;
+        }
+
+        #ocean {
+            border: 2px solid #023e8a;
+            background-color: #90e0ef;
+        }
+
+        .rectangle {
+            width: 300px;
+            height: 200px;
+            border: 1px solid #ddd;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            background-color: #ace5ee;
+        }
+
+        .rectangle img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            position: relative;
+            z-index: 1;
+        }
+
+        .heart, .brain {
+            position: absolute;
+            font-size: 40px;
+            z-index: 2;
+            animation: heartbeat 1.5s ease-in-out infinite;
+        }
+
+        .heart {
+            top: 75px;
+            left: 140px;
+        }
+
+        .brain {
+            top: 25px;
+            left: 125px;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+
+        .wave-container {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .wave {
+            position: absolute;
+            bottom: 0;
+            width: 200%;
+            height: 20%;
+            background-repeat: repeat-x;
+            background-size: cover;
+            opacity: 0.7;
+            animation: wave-animation 12s cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
+        }
+
+        .wave1 { background-image: url('https://i.postimg.cc/7LtCC11Y/wave1.png'); z-index: 2; animation-duration: 12s; }
+        .wave2 { background-image: url('https://i.postimg.cc/P5hv05rh/wave2.png'); z-index: 1; animation-duration: 16s; animation-delay: 2s; }
+        .wave3 { background-image: url('https://i.postimg.cc/63Dyc91k/wave3.png'); z-index: 0; animation-duration: 20s; animation-delay: 4s; }
+
+        @keyframes wave-animation {
+            0% { transform: translateX(0); }
+            50% { transform: translateX(-25%); }
+            100% { transform: translateX(-50%); }
+        }
+
+        .boat {
+            position: absolute;
+            bottom: 8%;
+            left: 75%;
+            width: 50px;
+            height: 25px;
+            background-image: url('https://i.postimg.cc/dVXZyxR1/boat.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            transform: translate(-50%, 0);
+            animation: boat-float 10s ease-in-out infinite, boat-tilt 8s ease-in-out infinite;
+        }
+
+        @keyframes boat-float {
+            0%, 100% { transform: translate(-50%, 0); }
+            50% { transform: translate(-50%, -15px); }
+        }
+
+        @keyframes boat-tilt {
+            0%, 100% { transform: translate(-50%, 0) rotate(0deg); }
+            25% { transform: translate(-50%, -5px) rotate(-2deg); }
+            75% { transform: translate(-50%, -5px) rotate(2deg); }
+        }
+
+        .app {
+            background: #fff;
+            width: 90%;
+            max-width: 600px;
+            margin: 20px auto;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .quiz h2 {
+            font-size: 18px;
+            color: #001e4d;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            background: #fff;
+            color: #222;
+            font-weight: 500;
+            width: 100%;
+            border: 1px solid #222;
+            padding: 10px;
+            margin: 10px 0;
+            text-align: left;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn:hover:not([disabled]) {
+            background: #222;
+            color: #fff;
+        }
+
+        .btn:disabled {
+            cursor: not-allowed;
+            opacity: 0.5;
+        }
+
+        #next-btn {
+            background: #001e4d;
+            color: #fff;
+            font-weight: 500;
+            width: 150px;
+            border: 0;
+            padding: 10px;
+            margin: 20px auto 0;
+            border-radius: 4px;
+            cursor: pointer;
+            display: none;
+        }
+
+        .correct { background: #9aeabc; }
+        .incorrect { background: #ff9393; }
+
+        #volume-slider {
+            width: 150px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="title">Gaïa</div>
+        <div class="menu">
+            <div class="menu-circle">☰</div>
+            <div class="dropdown">
+                <ul>
+                    <li><a href="podcast.html">Podcast</a></li>
+                    <li><a href="explications.html">Explication</a></li>
+                    <li><a href="https://credits-website.onrender.com/">Crédit</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="animation">
+            <div id="individu">
+                <h2>Individu</h2>
+                <div class="rectangle">
+                    <img src="icons/body.png" alt="Corps humain">
+                    <div class="heart">❤️</div>
+                    <div class="brain">🧠</div>
+                </div>
+            </div>
+            <div id="slider">
+                <input type="range" id="volume" name="volume" min="0" max="100">
+                <label for="volume">Organe</label>
+            </div>
+            <div id="ocean">
+                <h2>Océan</h2>
+                <div class="rectangle">
+                    <div class="wave-container">
+                        <div class="wave wave1"></div>
+                        <div class="wave wave2"></div>
+                        <div class="wave wave3"></div>
+                        <div class="boat"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="app">
+                <div class="quiz">
+                    <h2 id="question"></h2>
+                    <div id="answer-buttons"></div>
+                    <button id="next-btn">Suivant</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script>
+        const menuCircle = document.querySelector('.menu-circle');
+        const dropdown = document.querySelector('.dropdown');
+        menuCircle.addEventListener('click', () => {
+            dropdown.classList.toggle('show');
+        });
+    </script>
+    <script src="slider.js"></script>
+    <script src="quizz.js"></script>
+    <script src="quizz_ocean.js"></script>
+</body>
+</html>
